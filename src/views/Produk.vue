@@ -1,12 +1,15 @@
 <template>
-    <h1>Produk</h1>
+    <center>
+        <h1>Produk</h1>
     <div class="flex-container">
         <div v-for="produk in state" :key="produk.id" class="card">
+            <img v-bind:src="produk.imgUrl" width="200" alt="">
             <router-link class="container" :to="{ name: 'Detail', params: { id_produk: produk.id}}">
                 <h4>{{ produk.nama }}</h4>
             </router-link>
         </div>
     </div>
+</center>
 </template>
 <script>
 import { onMounted, reactive } from 'vue'
@@ -31,6 +34,8 @@ return{
 .flex-container {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 1%;
+    justify-content: center;
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.2);
@@ -43,6 +48,11 @@ return{
     box-shadow: 0 8px 16px 0 rgba(0,0,0, 0.2);
 }
 .container {
-    padding: 2px 16px;
+    padding: 2px 2px;
+}
+img{
+    border-radius: 8px;
+    max-width: 200px;
+    max-height: 100px;
 }
 </style>

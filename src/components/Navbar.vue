@@ -1,5 +1,4 @@
 <template>
-    <div>
         <ul>
             <li><router-link :class="{active:rl_1}" :to="{ name: 'Home'}">Home</router-link></li>
             <li><router-link :class="{active:rl_2}" :to="{ name: 'Contact'}">Contact</router-link></li>
@@ -7,7 +6,6 @@
             <li><router-link :class="{active:rl_4}" :to="{ name: 'Produk'}">produk</router-link></li>
             <li><router-link :class="{active:rl_5}" :to="{ name: 'Kategori'}">kategori</router-link></li>
         </ul>
-    </div>
 </template>
 <script>
 import {ref } from 'vue'
