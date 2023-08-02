@@ -1,24 +1,25 @@
 <template>
-    <h1>Produk</h1>
+    <h1>Kategori</h1>
     <div class="flex-container">
-        <div v-for="produk in state" :key="produk.id" class="card">
-            <router-link class="container" :to="{ name: 'Detail', params: { id_produk: produk.id}}">
-                <h4>{{ produk.nama }}</h4>
+        <div v-for="kategori in state" :key="kategori.id" class="card">
+            <router-link class="container" :to="{ name: 'DetailKategori' , params: { id_kategori: kategori.id}}">
+                <h4>{{ kategori.namaKategori }}</h4>
+                <h4>{{ kategori.nid }}</h4>
             </router-link>
         </div>
     </div>
 </template>
 <script>
 import { onMounted, reactive } from 'vue'
-import { produk } from '../assets/Produk';
+import { kategori } from '../assets/Kategori';
 
 export default {
     setup(props, context)
 {
-    const state = reactive(produk['produk']);
+    const state = reactive(kategori['kategori']);
 
     onMounted(() => {
-    context.emit("id-menu", 4);
+    context.emit("id-menu", 5);
 });
 return{
     state
@@ -30,7 +31,6 @@ return{
 <style scoped>
 .flex-container {
     display: flex;
-    flex-wrap: wrap;
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.2);
