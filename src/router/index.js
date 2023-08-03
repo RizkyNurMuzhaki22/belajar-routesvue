@@ -9,6 +9,9 @@ import Detail from "../views/Detail.vue";
 import Kategori from "../views/Kategori.vue";
 import DetailKategori from "../views/DetailKategori.vue"
 
+import Login from "../views/Login.vue";
+import { users } from "../assets/User";
+
 const routes = [ 
   {
     path: "/", 
@@ -26,9 +29,23 @@ const routes = [
     component: Contact,
   },
   {
+    path: "/login",
+    name: "Login",
+    component: Login,
+    props: true,
+  },
+  {
     path: "/produk",
     name: "Produk",
     component: Produk,
+    beforeEnter: (to, from, next) => {
+      const loggedInUser = users.find((user) => user.isLoggedIn == true);
+      if (loggedInUser) {
+        next();
+      } else{
+        next("/login");
+      }
+    },
   },
   {
     path: "/kategori",

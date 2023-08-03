@@ -5,6 +5,7 @@
         <div v-else>
         <h1>{{ detail.nama }}</h1>
         <h4>Harga : {{  detail.harga }}</h4>
+        <h4>Deskripsi : {{ detail.deskripsi }}</h4>
     </div>
 </template>
 <script>

@@ -6,7 +6,7 @@
             <div v-for="produk in detail" :key="produk.id" class="card">
                 <img v-bind:src="produk.imgUrl" width="200" alt="">
                 <router-link class="container" :to="{name: 'Detail' , params: {id_produk: produk.id}}">
-                    <h4>{{ produk.nama }}</h4>
+                    <h4><u>{{ produk.nama }}</u></h4>
                 </router-link>
             </div>
         </div>
